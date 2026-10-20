@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T12:33:04+00:00",
+  "title": "Design System: Mindat Nearby",
+  "extensions": {
+    "colorMeta": {
+      "steel": {
+        "role": "primary",
+        "displayName": "Cabinet Steel",
+        "canonical": "#3c4b44",
+        "oklch": "oklch(39.7% 0.022 165)",
+        "tonalRamp": [
+          "#030e09",
+          "#1a2821",
+          "#35443d",
+          "#52625a",
+          "#71827a",
+          "#92a39b",
+          "#b7c9c0",
+          "#e1f4eb"
+        ]
+      },
+      "steel-deep": {
+        "role": "primary",
+        "displayName": "Drawer Shadow Steel",
+        "canonical": "#2f3c36",
+        "oklch": "oklch(34.2% 0.020 165)",
+        "tonalRamp": [
+          "#040e09",
+          "#1b2722",
+          "#36433d",
+          "#53615b",
+          "#73817a",
+          "#93a39b",
+          "#b9c8c1",
+          "#e3f3eb"
+        ]
+      },
+      "steel-line": {
+        "role": "primary",
+        "displayName": "Rail Seam",
+        "canonical": "#556760",
+        "oklch": "oklch(49.7% 0.024 170)",
+        "tonalRamp": [
+          "#020e09",
+          "#182822",
+          "#33443e",
+          "#50625b",
+          "#70827b",
+          "#90a49c",
+          "#b5cac2",
+          "#dff4ec"
+        ]
+      },
+      "steel-ink": {
+        "role": "neutral",
+        "displayName": "Steel Light",
+        "canonical": "#eef2ef",
+        "oklch": "oklch(95.7% 0.006 154)",
+        "tonalRamp": [
+          "#090c0a",
+          "#222523",
+          "#3d413e",
+          "#5b5f5c",
+          "#7b7e7c",
+          "#9c9f9d",
+          "#c1c5c2",
+          "#ecf0ed"
+        ]
+      },
+      "steel-muted": {
+        "role": "neutral",
+        "displayName": "Steel Muted",
+        "canonical": "#b8c6bf",
+        "oklch": "oklch(81.4% 0.018 165)",
+        "tonalRamp": [
+          "#050e09",
+          "#1c2722",
+          "#37433d",
+          "#55615b",
+          "#74817a",
+          "#95a29b",
+          "#bac8c1",
+          "#e4f3eb"
+        ]
+      },
+      "brass": {
+        "role": "secondary",
+        "displayName": "Brass",
+        "canonical": "#c49a3a",
+        "oklch": "oklch(70.8% 0.122 85)",
+        "tonalRamp": [
+          "#200000",
+          "#3e1900",
+          "#5d3700",
+          "#7d5600",
+          "#9f7600",
+          "#c19837",
+          "#e9be60",
+          "#ffe88d"
+        ]
+      },
+      "brass-deep": {
+        "role": "secondary",
+        "displayName": "Aged Brass",
+        "canonical": "#8a6614",
+        "oklch": "oklch(53.3% 0.103 82)",
+        "tonalRamp": [
+          "#1e0100",
+          "#3b1b00",
+          "#5a3800",
+          "#7a5700",
+          "#9b772a",
+          "#be984e",
+          "#e5be74",
+          "#ffe99e"
+        ]
+      },
+      "brass-ink": {
+        "role": "secondary",
+        "displayName": "Brass Shadow",
+        "canonical": "#241a03",
+        "oklch": "oklch(22.4% 0.041 86)",
+        "tonalRamp": [
+          "#130900",
+          "#2d220a",
+          "#493e26",
+          "#685c43",
+          "#887c62",
+          "#aa9d82",
+          "#d0c3a7",
+          "#fbedd0"
+        ]
+      },
+      "brass-wash": {
+        "role": "secondary",
+        "displayName": "Brass Wash",
+        "canonical": "#fbf5e4",
+        "oklch": "oklch(97.0% 0.023 91)",
+        "tonalRamp": [
+          "#0f0b02",
+          "#282417",
+          "#443f32",
+          "#625d4f",
+          "#827d6e",
+          "#a49e8e",
+          "#cac4b4",
+          "#f4eedd"
+        ]
+      },
+      "type-red": {
+        "role": "tertiary",
+        "displayName": "Type-Specimen Red",
+        "canonical": "#b3122a",
+        "oklch": "oklch(49.0% 0.189 22)",
+        "tonalRamp": [
+          "#3d0000",
+          "#630000",
+          "#890003",
+          "#af0a27",
+          "#d63e47",
+          "#fe6367",
+          "#ff8b8b",
+          "#ffceca"
+        ]
+      },
+      "red-wash": {
+        "role": "tertiary",
+        "displayName": "Red Wash",
+        "canonical": "#fbe9eb",
+        "oklch": "oklch(94.9% 0.020 10)",
+        "tonalRamp": [
+          "#120809",
+          "#2d2022",
+          "#4a3c3d",
+          "#68595b",
+          "#89797a",
+          "#aa9a9c",
+          "#d0bfc1",
+          "#fbe9eb"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Label Ink",
+        "canonical": "#16202a",
+        "oklch": "oklch(23.9% 0.024 249)",
+        "tonalRamp": [
+          "#040c15",
+          "#1b252f",
+          "#36414c",
+          "#535f6b",
+          "#737f8b",
+          "#93a0ad",
+          "#b9c6d3",
+          "#e3f0fe"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "#47525c",
+        "oklch": "oklch(43.3% 0.022 246)",
+        "tonalRamp": [
+          "#040c14",
+          "#1b252e",
+          "#36414b",
+          "#545f69",
+          "#737f8a",
+          "#94a0ab",
+          "#b9c6d2",
+          "#e3f0fd"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Label Stock",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Cabinet Ground",
+        "canonical": "#dfe5e1",
+        "oklch": "oklch(91.6% 0.008 157)",
+        "tonalRamp": [
+          "#080c0a",
+          "#212522",
+          "#3c413e",
+          "#5a5f5c",
+          "#797f7b",
+          "#9aa09c",
+          "#c0c6c2",
+          "#eaf0ec"
+        ]
+      },
+      "ground-line": {
+        "role": "neutral",
+        "displayName": "Ground Seam",
+        "canonical": "#c4cdc8",
+        "oklch": "oklch(84.0% 0.012 162)",
+        "tonalRamp": [
+          "#070d0a",
+          "#1f2622",
+          "#3a423e",
+          "#58605b",
+          "#77807b",
+          "#98a19c",
+          "#bec7c2",
+          "#e8f1ec"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "#cfd6d2",
+        "oklch": "oklch(87.0% 0.009 161)",
+        "tonalRamp": [
+          "#080c0a",
+          "#202523",
+          "#3c413e",
+          "#595f5c",
+          "#797f7b",
+          "#9aa09c",
+          "#bfc6c2",
+          "#e9f0ec"
+        ]
+      },
+      "paper-hover": {
+        "role": "neutral",
+        "displayName": "Paper Hover",
+        "canonical": "#f1efe6",
+        "oklch": "oklch(95.1% 0.012 96)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#26241d",
+          "#414039",
+          "#5f5e56",
+          "#7f7d75",
+          "#a09f96",
+          "#c6c4bc",
+          "#f1efe6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Locality name on an opened full label (22px on phones)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Panel headings: current search, drawer name."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Locality name on a stacked label (17px on phones)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base text."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Field values, mineral lists, descriptions (14-14.5px, 70ch max)."
+      },
+      "label": {
+        "displayName": "Field Caption",
+        "purpose": "Printed uppercase condensed captions on ruled fields and group captions."
+      },
+      "numeric": {
+        "displayName": "Catalogue Number",
+        "purpose": "Catalogue numbers, counts, radii, coordinates in tabular figures."
+      }
+    },
+    "shadows": [
+      {
+        "name": "label-rest",
+        "value": "0 1px 0 var(--ground-line), 0 3px 10px rgb(22 32 42 / 0.07)",
+        "purpose": "Specimen labels at rest."
+      },
+      {
+        "name": "label-lift",
+        "value": "0 1px 0 var(--ground-line), 0 8px 22px rgb(22 32 42 / 0.13)",
+        "purpose": "Stack label hover, with 1px rise."
+      },
+      {
+        "name": "drawer-front",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 0.06), 0 1px 0 rgb(0 0 0 / 0.25)",
+        "purpose": "Steel drawer fronts in the rail."
+      },
+      {
+        "name": "holder-recess",
+        "value": "inset 0 1px 2px rgb(0 0 0 / 0.18)",
+        "purpose": "Brass label holders."
+      },
+      {
+        "name": "popover",
+        "value": "0 4px 10px rgb(22 32 42 / 0.18)",
+        "purpose": "Menus and place suggestions."
+      },
+      {
+        "name": "sheet",
+        "value": "0 -6px 18px rgb(22 32 42 / 0.16)",
+        "purpose": "Phone bottom sheet."
+      },
+      {
+        "name": "float",
+        "value": "0 10px 28px rgb(0 0 0 / 0.25)",
+        "purpose": "Toasts."
+      },
+      {
+        "name": "ghost",
+        "value": "0 18px 40px rgb(22 32 42 / 0.3)",
+        "purpose": "The label ghost while filing into a drawer."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+        "purpose": "All state transitions."
+      },
+      {
+        "name": "state",
+        "value": "0.15s",
+        "purpose": "Hover colour and border changes."
+      },
+      {
+        "name": "lift",
+        "value": "0.2s",
+        "purpose": "Label lift, toast entry."
+      },
+      {
+        "name": "sheet",
+        "value": "0.25s",
+        "purpose": "Phone sheet height."
+      },
+      {
+        "name": "bump",
+        "value": "0.4s",
+        "purpose": "Drawer count bump on filing (scale 1.25, brass flash)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "All animation and transition durations under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "max-width: 899px",
+        "purpose": "Single column, bottom sheet, bottom drawer bar."
+      },
+      {
+        "name": "narrow-desktop",
+        "value": "900px-1180px",
+        "purpose": "Rail 200px, panel 380px."
+      },
+      {
+        "name": "desktop",
+        "value": "min-width: 900px",
+        "purpose": "Rail 236px, panel 440px, bar 64px."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Ink-framed white hardware button for secondary actions.",
+      "html": "<button class=\"ds-btn\">Google Maps</button>",
+      "css": ".ds-btn{font-family:var(--font);display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 14px;border:1px solid var(--ink);border-radius:3px;background:var(--card);color:var(--ink);font-weight:600;font-size:15px;cursor:pointer;transition:background-color .15s var(--ease),transform .1s var(--ease)}.ds-btn:hover{background:#f1efe6}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}"
+    },
+    {
+      "name": "Brass Button",
+      "kind": "button",
+      "refersTo": "button-brass",
+      "description": "The filing action on a full label; brass means kept.",
+      "html": "<button class=\"ds-btn-brass\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"5\" x=\"2\" y=\"3\" rx=\"1\"/><path d=\"M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8\"/><path d=\"M10 12h4\"/></svg>Archivia</button>",
+      "css": ".ds-btn-brass{font-family:var(--font);display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 14px;border:1px solid var(--brass-deep);border-radius:3px;background:var(--brass);color:var(--brass-ink);font-weight:600;font-size:15px;box-shadow:inset 0 1px 0 rgb(255 255 255 / .35);cursor:pointer;transition:background-color .15s var(--ease),transform .1s var(--ease)}.ds-btn-brass:hover{background:#d3a947}.ds-btn-brass:active{transform:translateY(1px)}.ds-btn-brass:focus-visible{outline:2px solid var(--focus);outline-offset:2px}"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Filled ink for search and navigation.",
+      "html": "<button class=\"ds-btn-ink\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 11 22 2l-9 19-2-8-8-2Z\"/></svg>Naviga</button>",
+      "css": ".ds-btn-ink{font-family:var(--font);display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 14px;border:1px solid var(--ink);border-radius:3px;background:var(--ink);color:#fff;font-weight:600;font-size:15px;cursor:pointer;transition:background-color .15s var(--ease),transform .1s var(--ease)}.ds-btn-ink:hover{background:#26323d}.ds-btn-ink:active{transform:translateY(1px)}.ds-btn-ink:focus-visible{outline:2px solid var(--focus);outline-offset:2px}"
+    },
+    {
+      "name": "Place Search",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Search bar field: place name or pasted coordinates.",
+      "html": "<input class=\"ds-input-search\" type=\"search\" placeholder=\"Cerca un luogo o incolla coordinate\">",
+      "css": ".ds-input-search{font-family:var(--font);width:320px;height:40px;padding:0 12px 0 38px;border:1px solid var(--ink);border-radius:3px;font-size:15px;color:var(--ink);background:var(--card) no-repeat 12px 50%/16px url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2347525c' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E\")}.ds-input-search::placeholder{color:var(--ink-2)}.ds-input-search:focus{outline:2px solid var(--focus);outline-offset:-1px}"
+    },
+    {
+      "name": "Radius Stepper",
+      "kind": "nav",
+      "refersTo": "button",
+      "description": "Segmented ink-framed radius control with tabular steps.",
+      "html": "<div class=\"ds-radius\"><button>5 km</button><button aria-pressed=\"true\">10 km</button><button>25 km</button><button>50 km</button></div>",
+      "css": ".ds-radius{display:inline-flex;border:1px solid var(--ink);border-radius:3px;overflow:hidden}.ds-radius button{font-family:var(--font);height:38px;padding:0 11px;border:0;border-left:1px solid var(--rule);background:var(--card);color:var(--ink);font-size:15px;font-variant-numeric:tabular-nums;font-variation-settings:'wdth' 88;cursor:pointer}.ds-radius button:first-child{border-left:0}.ds-radius button:hover{background:#f1efe6}.ds-radius button[aria-pressed='true']{background:var(--ink);color:#fff;font-weight:600}.ds-radius button:focus-visible{outline:2px solid var(--focus);outline-offset:-2px}"
+    },
+    {
+      "name": "Rail Drawers",
+      "kind": "nav",
+      "refersTo": "drawer",
+      "description": "Steel drawer fronts in the rail; active drawer gets a brass pull, user drawers carry brass label holders.",
+      "html": "<div class=\"ds-rail\"><button class=\"ds-drawer\" aria-current=\"page\"><span class=\"ds-dname\">Intorno</span><span class=\"ds-count\">42</span></button><button class=\"ds-drawer\"><span class=\"ds-holder\">Val d'Ossola</span><span class=\"ds-count\">7</span></button></div>",
+      "css": ".ds-rail{font-family:var(--font);display:flex;flex-direction:column;gap:6px;width:236px;padding:14px;background:var(--steel);font-size:15px}.ds-drawer{font-family:var(--font);position:relative;display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 10px;border:1px solid var(--steel-line);border-radius:3px;background:var(--steel-deep);box-shadow:inset 0 1px 0 rgb(255 255 255 / .06),0 1px 0 rgb(0 0 0 / .25);color:var(--steel-ink);text-align:left;cursor:pointer;transition:background-color .15s var(--ease),border-color .15s var(--ease)}.ds-drawer:hover{background:#34433c;border-color:#6a7d75}.ds-drawer:focus-visible{outline:2px solid var(--focus);outline-offset:2px}.ds-drawer[aria-current='page']{border-color:var(--brass);background:#2a362f}.ds-drawer[aria-current='page']::before{content:'';position:absolute;left:-1px;top:8px;bottom:8px;width:3px;background:var(--brass)}.ds-dname{flex:1;font-weight:600}.ds-holder{flex:1;padding:3px 8px;border:1.5px solid var(--brass);border-radius:2px;background:#f7f6f1;color:var(--ink);box-shadow:inset 0 1px 2px rgb(0 0 0 / .18);font-size:14px;font-weight:600}.ds-count{min-width:26px;padding:1px 6px;border-radius:2px;background:rgb(0 0 0 / .22);color:var(--steel-muted);font-size:13px;text-align:center;font-variant-numeric:tabular-nums;font-variation-settings:'wdth' 88}"
+    },
+    {
+      "name": "Specimen Label",
+      "kind": "card",
+      "refersTo": "specimen-label",
+      "description": "A locality as a ruled specimen label: square, ink frame, inset printed frame, catalogue number top-right; red inner frame for type localities.",
+      "html": "<article class=\"ds-label ds-is-type\"><div class=\"ds-label-head\"><h3 class=\"ds-label-name\">Cava di Candoglia</h3><span class=\"ds-cat\">N. 3912</span></div><p class=\"ds-place\">Mergozzo, Verbano-Cusio-Ossola, Piemonte</p><dl class=\"ds-fields\"><div><dt>Tipo</dt><dd>Cava</dd></div><div><dt>Minerali</dt><dd><span class=\"ds-tl\">Fe Mg Si</span></dd></div></dl><div class=\"ds-actions\"><button class=\"ds-mini\">Archivia</button></div></article>",
+      "css": ".ds-label{font-family:var(--font);position:relative;width:400px;padding:12px 14px;background:var(--card);color:var(--ink);border:1px solid var(--ink);box-shadow:0 1px 0 var(--ground-line),0 3px 10px rgb(22 32 42 / .07);cursor:pointer;transition:box-shadow .2s var(--ease),transform .2s var(--ease)}.ds-label:hover{box-shadow:0 1px 0 var(--ground-line),0 8px 22px rgb(22 32 42 / .13);transform:translateY(-1px)}.ds-label:focus-visible{outline:2px solid var(--focus);outline-offset:3px}.ds-label::after{content:'';position:absolute;inset:3px;border:1px solid var(--rule);pointer-events:none}.ds-label.ds-is-type::after{border-color:var(--red);border-width:2px}.ds-label-head{display:flex;gap:10px;align-items:flex-start}.ds-label-name{flex:1;margin:0;font-size:18px;line-height:1.22;font-weight:700;font-variation-settings:'wdth' 92}.ds-cat{padding-top:3px;font-size:12.5px;letter-spacing:.02em;color:var(--ink-2);font-variant-numeric:tabular-nums;font-variation-settings:'wdth' 88}.ds-place{margin:2px 0 0;font-size:14px;color:var(--ink-2)}.ds-fields{margin:8px 0 0;display:grid;gap:2px}.ds-fields div{display:grid;grid-template-columns:74px 1fr;gap:10px}.ds-fields dt{font-size:11.5px;font-weight:600;font-variation-settings:'wdth' 75;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);padding-top:2px}.ds-fields dd{margin:0;font-size:14px;font-weight:600}.ds-tl{color:var(--red)}.ds-actions{position:relative;z-index:1;margin-top:12px}.ds-mini{font-family:var(--font);min-height:34px;padding:0 10px;border:1px solid var(--ink);border-radius:3px;background:var(--card);font-weight:600;font-size:14px;cursor:pointer}.ds-mini:hover{background:#fbf5e4;border-color:var(--brass-deep)}"
+    },
+    {
+      "name": "Drawer Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Drawer membership toggle on a full label.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">Val d'Ossola</button><button class=\"ds-chip\" aria-pressed=\"false\">Liguria 2026</button></div>",
+      "css": ".ds-chips{display:flex;gap:6px}.ds-chip{font-family:var(--font);display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border:1px solid var(--ground-line);border-radius:2px;background:var(--card);color:var(--ink);font-size:14px;cursor:pointer}.ds-chip:hover{background:#f1efe6}.ds-chip:focus-visible{outline:2px solid var(--focus);outline-offset:2px}.ds-chip[aria-pressed='true']{border-color:var(--brass-deep);background:#fbf5e4;font-weight:600}"
+    },
+    {
+      "name": "Type Mark",
+      "kind": "custom",
+      "refersTo": "type-mark",
+      "description": "Red tag on a full label marking a type locality.",
+      "html": "<span class=\"ds-type-mark\">Località tipo</span>",
+      "css": ".ds-type-mark{font-family:var(--font);display:inline-block;padding:1px 7px;background:var(--red);color:#fff;font-weight:700;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Cabinet You Carry",
+    "overview": "Every locality is a specimen label and every list a drawer of a collection cabinet. The chrome is cabinet steel: a green-grey rail of drawer fronts with brass label holders and pulls. The content is bright white label stock, framed in blue-black ink, with printed field captions over hairline rules and the Mindat catalogue number set top-right in tabular figures. Type-specimen red marks type localities, following the museum convention of red-bordered type labels.\n\nDensity is that of a working collection, not a showcase: labels stack tightly (12px gaps), captions are condensed, numbers are tabular, and the map takes whatever room is left. One family, Archivo, carries everything; its width axis does the work other systems hand to a second face (condensed for captions and numbers, near-normal for names and prose). The world stays in light mode and reads in daylight on a phone.\n\nThe same label exists on screen and on paper. Print output produces cut-out specimen labels (two per row, 66mm tall, dashed cut lines, inner ink frame) and a catalogue list, so screen decisions must survive translation to A4.",
+    "keyCharacteristics": [
+      "Steel chrome, white label stock, blue-black ink, brass for what is active or filed, red for type localities.",
+      "Square-cornered labels in a 1px ink frame with an inset hairline printed frame.",
+      "Ruled forms: condensed uppercase field captions over hairline rules.",
+      "One variable family (Archivo); width axis distinguishes captions, numbers and names.",
+      "Tight corners everywhere else (2-3px); nothing pill-shaped."
+    ],
+    "rules": [
+      {
+        "name": "The Red Is Earned Rule",
+        "body": "Red appears only for type localities and for errors or destruction. Never as decoration, accent or emphasis.",
+        "section": "colors"
+      },
+      {
+        "name": "The Brass Means Filed Rule",
+        "body": "Brass marks what is active or kept: the open drawer, a filed label, a saved pin, the filing action. An unfiled, inactive thing is never brass.",
+        "section": "colors"
+      },
+      {
+        "name": "The Printed Caption Rule",
+        "body": "Uppercase condensed captions exist only as field captions on a ruled form or caption for a group in the rail or a menu, always directly attached to the content they name. They are never floated above a heading as a tagline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Number Rule",
+        "body": "Every number a user compares (catalogue numbers, counts, radii, coordinates, route stops) is set in tabular figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The Soft Shadow Rule",
+        "body": "Shadows are blurred and ambient. No hard offset shadows; depth on metal comes from inset highlights and recesses, not from offset blocks.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Label Rule",
+        "body": "A specimen label never has rounded corners. Rounding belongs to the hardware around it, and never exceeds 3px.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep labels square with the 1px ink frame and inset hairline frame; switch the inset frame to 2px red for type localities.",
+      "Do set field captions in Archivo at `wdth` 75, uppercase, 0.08em tracking, over hairline rules.",
+      "Do set every catalogue number, count, radius and coordinate in tabular figures at `wdth` 88.",
+      "Do use brass for the active drawer, filed state, saved pins and the filing action, and nowhere else.",
+      "Do keep hardware corners at 3px (2px for chips and holders).",
+      "Do design every label view so it can print as a 66mm cut-out label."
+    ],
+    "donts": [
+      "Don't round specimen labels or use radii above 3px anywhere.",
+      "Don't use red for anything other than type localities, errors and destructive actions.",
+      "Don't tint the label stock cream; labels are pure white on a cool steel-grey ground.",
+      "Don't add a second typeface; vary Archivo's width and weight instead.",
+      "Don't float uppercase captions above headings as taglines; captions belong to ruled fields and groups.",
+      "Don't use hard offset shadows; depth is soft ambient shadow or inset metal."
+    ]
+  }
+}

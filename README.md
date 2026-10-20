@@ -33,3 +33,19 @@ Gli endpoint geografici di Mindat restituiscono al massimo 10 località per rich
 pagine di `/localities/` sono limitate a 10 risultati. `src/mindat.ts` divide quindi l'area
 di ricerca in quadranti finché ogni quadrante ha meno di 10 risultati, poi scarica i dettagli
 a blocchi di 10. Le aree amministrative senza coordinate (comuni ecc.) vengono escluse.
+
+## Sito web (mindat.chicubo.it)
+
+`site/` è la versione web: file statici, nessuna build. Sul server:
+
+- **nginx** (`/etc/nginx/sites-available/mindat`, solo su `127.0.0.1:8650`, raggiunto dal tunnel Cloudflare)
+  serve `site/`, inoltra `/api/v1/` ad api.mindat.org aggiungendo il token
+  (`/etc/nginx/mindat-token.conf`) con cache di un giorno, e `/data/` al servizio sotto.
+- **Cloudflare Access** con login Google protegge tutto il dominio.
+- **`server/index.js`** (servizio systemd `mindat-nearby`, unit in `server/mindat-nearby.service`):
+  archivio e cassetti di ogni utente in SQLite (`/var/lib/mindat-nearby/mindat.db`),
+  utente preso dal JWT firmato di Access. Per provarlo in locale: `DEV_USER=io@example.com node server/index.js`.
+
+Aggiornare: `cd /var/www/mindat-nearby && git pull` (e `sudo systemctl restart mindat-nearby` se cambia `server/`).
+
+Senza il proxy (es. aprendo `site/` altrove) l'app chiede il token Mindat personale e l'archivio non è disponibile.

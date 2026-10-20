@@ -1,0 +1,18 @@
+[Unit]
+Description=Mindat Nearby: luoghi archiviati e cassetti (mindat.chicubo.it)
+After=network-online.target
+
+[Service]
+User=nicolo
+WorkingDirectory=/var/www/mindat-nearby/server
+Environment=PORT=8651
+Environment=DB=/var/lib/mindat-nearby/mindat.db
+Environment=ACCESS_TEAM=chicubo.cloudflareaccess.com
+Environment=ACCESS_AUD=52af391e326b27d0a06939f646b867aa22a35c78ef07ed4ca558ecb67adf4e8a
+Environment=NODE_NO_WARNINGS=1
+ExecStart=/usr/bin/node index.js
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

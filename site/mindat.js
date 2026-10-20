@@ -11,22 +11,22 @@ const PROXY = 'api/v1';
 const GEO_CAP = 10;
 const MAX_DEPTH = 7;
 const MAX_REQUESTS = 250;
-const CONCURRENCY = 6;
+const CONCURRENCY = 4;
 const PAGE = 10; // the API caps pages at 10 results
 
 export class MindatError extends Error {}
 
-async function request(token, path, init = {}, retries = 2) {
+async function request(token, path, init = {}, retries = 4) {
   const headers = { 'Content-Type': 'application/json', Accept: 'application/json' };
   if (token) headers.Authorization = `Token ${token}`;
   const res = await fetch((token ? UPSTREAM : PROXY) + path, { ...init, headers });
   if (res.status === 401 || res.status === 403) throw new MindatError('Token Mindat non valido.');
   // The API occasionally times out at the Cloudflare edge; those are worth retrying.
   if (res.status >= 502 && retries > 0) {
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((r) => setTimeout(r, 800 * 2 ** (4 - retries)));
     return request(token, path, init, retries - 1);
   }
-  if (!res.ok) throw new MindatError(`Errore Mindat (${res.status}).`);
+  if (!res.ok) throw Object.assign(new MindatError(`Errore Mindat (${res.status}).`), { status: res.status });
   return res.json();
 }
 
@@ -182,4 +182,83 @@ export async function checkToken(token) {
   await request(token, '/localities/?page_size=1&fields=id');
 }
 
+// Full record for one locality: Mindat's (already truncated) description and
+// the minerals reported there, with type-locality and questioned flags.
+// onBase(info) fires as soon as the locality itself is in, before minerals.
+export async function localityDetail(token, id, onBase = () => {}) {
+  const locP = request(
+    token,
+    `/localities/${id}/?fields=id,txt,description_short,latitude,longitude,elements,locality_type,refs`,
+  ).then(async (loc) => {
+    await fetchTypes(token, [loc.locality_type]);
+    const info = baseInfo(loc);
+    onBase(info);
+    return info;
+  });
+  const [info, occurrences] = await Promise.all([
+    locP,
+    pagesInParallel(token, `/occurrences/?loc=${id}&fields=min,typeloc,questioned&page_size=${PAGE}`),
+  ]);
+  const byId = new Map();
+  for (const o of occurrences) {
+    const prev = byId.get(o.min);
+    byId.set(o.min, {
+      id: o.min,
+      typeLocality: Boolean(o.typeloc) || Boolean(prev?.typeLocality),
+      questioned: Boolean(o.questioned) && (prev ? prev.questioned : true),
+    });
+  }
+  const ids = [...byId.keys()];
+  const chunks = [];
+  for (let i = 0; i < ids.length; i += PAGE) chunks.push(ids.slice(i, i + PAGE));
+  const names = (
+    await inChunks(chunks, (c) =>
+      allPages(token, `/geomaterials/?id_in=${c.join(',')}&fields=id,name,mindat_formula&page_size=${PAGE}`),
+    )
+  ).flat();
+  const minerals = names
+    .map((g) => ({ ...byId.get(g.id), name: g.name, formula: g.mindat_formula ?? '' }))
+    .sort((a, b) => b.typeLocality - a.typeLocality || a.name.localeCompare(b.name));
+
+  return { ...info, minerals };
+}
+
+function baseInfo(loc) {
+  const hasCoords = loc.latitude !== 0 || loc.longitude !== 0;
+  return {
+    id: loc.id,
+    txt: loc.txt,
+    latitude: hasCoords ? loc.latitude : null,
+    longitude: hasCoords ? loc.longitude : null,
+    elements: (loc.elements ?? '').split('-').filter(Boolean),
+    typeName: typeCache.get(loc.locality_type)?.name ?? null,
+    description: cleanText(loc.description_short),
+  };
+}
+
+// Mindat pages hold 10 results and don't report a total, so after the first
+// page we ask for the next few at once until one comes back short or missing.
+async function pagesInParallel(token, path) {
+  const first = await request(token, path);
+  const results = [...first.results];
+  if (!first.next) return results;
+  for (let page = 2; ; page += CONCURRENCY) {
+    const batch = await Promise.all(
+      Array.from({ length: CONCURRENCY }, (_, i) =>
+        request(token, `${path}&page=${page + i}`).catch((err) => {
+          if (err instanceof MindatError && err.status === 404) return null; // past the end
+          throw err;
+        }),
+      ),
+    );
+    for (const p of batch) if (p) results.push(...p.results);
+    if (batch.some((p) => !p || !p.next)) return results;
+  }
+}
+
+function cleanText(s) {
+  return (s ?? '').replace(/\r\n?/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 export const localityUrl = (id) => `https://www.mindat.org/loc-${id}.html`;
+export const mineralUrl = (id) => `https://www.mindat.org/min-${id}.html`;
