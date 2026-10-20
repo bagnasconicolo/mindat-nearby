@@ -4,7 +4,10 @@
 // request. To get *all* localities within a radius we search the bounding box
 // with a quadtree: any cell that comes back full is split into four.
 
-const BASE = 'https://api.mindat.org/v1';
+// With a token we call Mindat directly; without one we go through the
+// server's proxy (api/v1 on this site), which adds its own token.
+const UPSTREAM = 'https://api.mindat.org/v1';
+const PROXY = 'api/v1';
 const GEO_CAP = 10;
 const MAX_DEPTH = 7;
 const MAX_REQUESTS = 250;
@@ -14,14 +17,9 @@ const PAGE = 10; // the API caps pages at 10 results
 export class MindatError extends Error {}
 
 async function request(token, path, init = {}, retries = 2) {
-  const res = await fetch(BASE + path, {
-    ...init,
-    headers: {
-      Authorization: `Token ${token}`,
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-  });
+  const headers = { 'Content-Type': 'application/json', Accept: 'application/json' };
+  if (token) headers.Authorization = `Token ${token}`;
+  const res = await fetch((token ? UPSTREAM : PROXY) + path, { ...init, headers });
   if (res.status === 401 || res.status === 403) throw new MindatError('Token Mindat non valido.');
   // The API occasionally times out at the Cloudflare edge; those are worth retrying.
   if (res.status >= 502 && retries > 0) {
@@ -110,7 +108,8 @@ async function allPages(token, path) {
   let page = await request(token, path);
   results.push(...page.results);
   while (page.next) {
-    page = await request(token, page.next.slice(BASE.length));
+    const next = new URL(page.next);
+    page = await request(token, next.pathname.replace(/^\/v1/, '') + next.search);
     results.push(...page.results);
   }
   return results;
@@ -170,6 +169,7 @@ export async function findNearby(token, lat, lon, radiusKm, onProgress = () => {
   return { localities, complete };
 }
 
+// Pass null to check whether this site has a working proxy.
 export async function checkToken(token) {
   await request(token, '/localities/?page_size=1&fields=id');
 }

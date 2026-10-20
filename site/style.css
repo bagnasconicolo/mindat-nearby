@@ -63,7 +63,7 @@ h1 { margin: 0; font-size: 24px; }
 
 /* Map + list: stacked on phones, side by side on wider screens */
 main { flex: 1; min-height: 0; display: flex; flex-direction: column; }
-main[hidden], #token-form[hidden] { display: none; }
+main[hidden], #token-form[hidden], #token-link[hidden] { display: none; }
 #map-wrap { position: relative; height: 42%; background: var(--line); }
 #map { position: absolute; inset: 0; }
 #gps {

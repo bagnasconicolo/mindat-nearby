@@ -258,5 +258,13 @@ if (token) {
   showApp();
   searchFromGps();
 } else {
-  showTokenForm();
+  // On a server with the Mindat proxy no personal token is needed.
+  checkToken(null).then(
+    () => {
+      $('token-link').hidden = true;
+      showApp();
+      searchFromGps();
+    },
+    showTokenForm,
+  );
 }
