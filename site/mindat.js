@@ -169,7 +169,15 @@ export async function findNearby(token, lat, lon, radiusKm, onProgress = () => {
   return { localities, complete };
 }
 
-// Pass null to check whether this site has a working proxy.
+// True when the site is served with the Mindat proxy (no personal token needed).
+export async function hasProxy() {
+  try {
+    return (await fetch('api/ping')).ok;
+  } catch {
+    return false;
+  }
+}
+
 export async function checkToken(token) {
   await request(token, '/localities/?page_size=1&fields=id');
 }

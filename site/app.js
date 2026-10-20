@@ -1,5 +1,5 @@
 /* global L */
-import { checkToken, findNearby, localityUrl, MindatError } from './mindat.js';
+import { checkToken, findNearby, hasProxy, localityUrl, MindatError } from './mindat.js';
 
 const RADII = [5, 10, 25, 50];
 const TOKEN_KEY = 'mindat_token';
@@ -259,12 +259,10 @@ if (token) {
   searchFromGps();
 } else {
   // On a server with the Mindat proxy no personal token is needed.
-  checkToken(null).then(
-    () => {
-      $('token-link').hidden = true;
-      showApp();
-      searchFromGps();
-    },
-    showTokenForm,
-  );
+  hasProxy().then((proxy) => {
+    if (!proxy) return showTokenForm();
+    $('token-link').hidden = true;
+    showApp();
+    searchFromGps();
+  });
 }
