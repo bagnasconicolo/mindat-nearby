@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mindat Nearby</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Località vicine</h1>
+    <button id="token-link" class="link">Token</button>
+  </header>
+
+  <form id="token-form" hidden>
+    <p>Per cercare le località serve il tuo token API Mindat. Lo trovi nelle impostazioni del tuo account su mindat.org. Resta salvato solo in questo browser.</p>
+    <input id="token-input" placeholder="Token API" autocomplete="off" spellcheck="false" required>
+    <p id="token-error" class="error"></p>
+    <button type="submit" class="primary">Salva e continua</button>
+    <a href="https://www.mindat.org/a/how_to_get_my_mindat_api_key" target="_blank" rel="noopener">Come ottengo il token?</a>
+  </form>
+
+  <main id="app" hidden>
+    <div id="map-wrap">
+      <div id="map"></div>
+      <button id="gps" class="primary">◎ Cerca qui vicino</button>
+    </div>
+    <section id="side">
+      <div id="radii"></div>
+      <p id="status">Clicca sulla mappa per cercare in un punto.</p>
+      <ul id="list"></ul>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
